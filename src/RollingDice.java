@@ -1,38 +1,36 @@
-import java.io.*;
+import java.sql.PseudoColumnUsage;
 
 public class RollingDice
 {
     public static void main(String[] args)
     {
-       //Setting variables
-        String s = "The quick brown fox jumps over the lazy dog";
+        String s = "The quick brown fox jumps over the lay dog";
         boolean[] mark = new boolean[26];
+        boolean paligram = true;
         int index = 0;
-        boolean pangram = true;
 
-        //Getting numeric values and mark it down in boolean string
+        //use for loop and - '-A' to get num values and store it in mark array(false or true)
         for(int i=0;i<s.length();i++){
-            char curChar = s.charAt(i);
-            if(curChar>='A'&&curChar<='Z'){
-                index = curChar-'A';
-            }else if(curChar>='a'&&curChar<='z'){
-                index = curChar-'a';
-            }
-            mark[index] = true;
+           char currentChar = s.charAt(i);
+           if(currentChar>='A'&&currentChar<='Z'){
+               index = currentChar - 'A';
+           } else if(currentChar>='a'&&currentChar<='z'){
+               index = currentChar - 'a';
+           }
+           mark[index] = true;
         }
 
-        for(int j=0;j<mark.length;j++){
+        for(int j = 0; j<mark.length;j++){
             if(mark[j]==false){
-                pangram = false;
+                paligram = false;
             }
         }
 
-        if(pangram){
+        if(paligram){
             System.out.println("it is");
         }else{
-            System.out.println("it's  not");
+            System.out.println("it's not");
         }
-
     }
 }
 
