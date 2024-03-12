@@ -87,6 +87,13 @@ public class AccPattern {
             System.out.println(someThinhg[2]);
         }
     }
+
+
+
+
+
+
+
     public static void readATextFile() throws IOException
     {
         File file = new File("/Users/idiot/Documents/ReadingText.txt");
